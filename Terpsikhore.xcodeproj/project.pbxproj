@@ -13,7 +13,7 @@
 		3F2A4FD023C7A731005DFAD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A4FCE23C7A731005DFAD6 /* LaunchScreen.storyboard */; };
 		3F2A4FD923C7AA89005DFAD6 /* AudioWaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A4FD823C7AA89005DFAD6 /* AudioWaveViewController.swift */; };
 		3F2A4FDB23C7AACB005DFAD6 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A4FDA23C7AACB005DFAD6 /* UIView+Utility.swift */; };
-		A4C83212F880177AA0614386 /* Pods_Terpsikhore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F914B4CC92762A101294D03A /* Pods_Terpsikhore.framework */; };
+		E341A2BC6611AFADBE3EEB44 /* Pods_Terpsikhore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737996686A6156BD2D61E57A /* Pods_Terpsikhore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +26,9 @@
 		3F2A4FD723C7A73A005DFAD6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3F2A4FD823C7AA89005DFAD6 /* AudioWaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioWaveViewController.swift; sourceTree = "<group>"; };
 		3F2A4FDA23C7AACB005DFAD6 /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
-		743223D68C6B8F0E68F89EB4 /* Pods-Terpsikhore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terpsikhore.release.xcconfig"; path = "Target Support Files/Pods-Terpsikhore/Pods-Terpsikhore.release.xcconfig"; sourceTree = "<group>"; };
-		92D7A78AFEC6636A2371BE6B /* Pods-Terpsikhore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terpsikhore.debug.xcconfig"; path = "Target Support Files/Pods-Terpsikhore/Pods-Terpsikhore.debug.xcconfig"; sourceTree = "<group>"; };
-		F914B4CC92762A101294D03A /* Pods_Terpsikhore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Terpsikhore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		737996686A6156BD2D61E57A /* Pods_Terpsikhore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Terpsikhore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B97EECF962F84C384088ABF /* Pods-Terpsikhore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terpsikhore.debug.xcconfig"; path = "Target Support Files/Pods-Terpsikhore/Pods-Terpsikhore.debug.xcconfig"; sourceTree = "<group>"; };
+		C461D93BD1419DB444449631 /* Pods-Terpsikhore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terpsikhore.release.xcconfig"; path = "Target Support Files/Pods-Terpsikhore/Pods-Terpsikhore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,13 +36,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4C83212F880177AA0614386 /* Pods_Terpsikhore.framework in Frameworks */,
+				E341A2BC6611AFADBE3EEB44 /* Pods_Terpsikhore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21A4952B386410108E5F3A63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				737996686A6156BD2D61E57A /* Pods_Terpsikhore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3F2A4FB723C7A730005DFAD6 = {
 			isa = PBXGroup;
 			children = (
@@ -50,7 +58,7 @@
 				3F2A4FC223C7A730005DFAD6 /* Terpsikhore */,
 				3F2A4FC123C7A730005DFAD6 /* Products */,
 				E9C673044D520B23C1C28799 /* Pods */,
-				A1C7298A9A51AF83D24359D5 /* Frameworks */,
+				21A4952B386410108E5F3A63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,19 +84,11 @@
 			path = Terpsikhore;
 			sourceTree = "<group>";
 		};
-		A1C7298A9A51AF83D24359D5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F914B4CC92762A101294D03A /* Pods_Terpsikhore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E9C673044D520B23C1C28799 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				92D7A78AFEC6636A2371BE6B /* Pods-Terpsikhore.debug.xcconfig */,
-				743223D68C6B8F0E68F89EB4 /* Pods-Terpsikhore.release.xcconfig */,
+				7B97EECF962F84C384088ABF /* Pods-Terpsikhore.debug.xcconfig */,
+				C461D93BD1419DB444449631 /* Pods-Terpsikhore.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -100,12 +100,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F2A4FD423C7A731005DFAD6 /* Build configuration list for PBXNativeTarget "Terpsikhore" */;
 			buildPhases = (
-				75E1CE3B9D172425D2FD7874 /* [CP] Check Pods Manifest.lock */,
+				1F194056CD91072489870DB3 /* [CP] Check Pods Manifest.lock */,
 				3F2A4FBC23C7A730005DFAD6 /* Sources */,
 				3F2A4FBD23C7A730005DFAD6 /* Frameworks */,
 				3F2A4FBE23C7A730005DFAD6 /* Resources */,
-				86EE0AFBA055C81C1664D943 /* [CP] Embed Pods Frameworks */,
 				3F2A4FDC23C7ABC2005DFAD6 /* SwiftLint */,
+				37136224BFCBF3AA55989FA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,25 +163,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3F2A4FDC23C7ABC2005DFAD6 /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		75E1CE3B9D172425D2FD7874 /* [CP] Check Pods Manifest.lock */ = {
+		1F194056CD91072489870DB3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -203,7 +185,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		86EE0AFBA055C81C1664D943 /* [CP] Embed Pods Frameworks */ = {
+		37136224BFCBF3AA55989FA0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,6 +201,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Terpsikhore/Pods-Terpsikhore-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3F2A4FDC23C7ABC2005DFAD6 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -371,7 +371,7 @@
 		};
 		3F2A4FD523C7A731005DFAD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92D7A78AFEC6636A2371BE6B /* Pods-Terpsikhore.debug.xcconfig */;
+			baseConfigurationReference = 7B97EECF962F84C384088ABF /* Pods-Terpsikhore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -390,7 +390,7 @@
 		};
 		3F2A4FD623C7A731005DFAD6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 743223D68C6B8F0E68F89EB4 /* Pods-Terpsikhore.release.xcconfig */;
+			baseConfigurationReference = C461D93BD1419DB444449631 /* Pods-Terpsikhore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

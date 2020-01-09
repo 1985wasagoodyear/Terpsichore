@@ -5,7 +5,7 @@
 //  Original by Tim Richardson on 2/25/2015
 //  Retrieved from https://timrichardson.co/2015/02/microphone-input-wave-like-siri-using-swift/
 //
-//  Ported to Swift 5 by K Y on 1/9/20.
+//  Ported to Swift 5, Xcode 11.3 by K Y on 1/9/20.
 //
 
 import UIKit
