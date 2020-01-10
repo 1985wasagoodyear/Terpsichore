@@ -7,16 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1A9C6923C8EEF2005114C8 /* RecordingService.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1A9C6723C8EEF2005114C8 /* RecordingService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F1A9C6C23C8EEF2005114C8 /* RecordingService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1A9C6523C8EEF2005114C8 /* RecordingService.framework */; };
+		3F1A9C6E23C8EEF2005114C8 /* RecordingService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F1A9C6523C8EEF2005114C8 /* RecordingService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F1A9C7223C8EEF7005114C8 /* RecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1A9C5E23C8E970005114C8 /* RecordingService.swift */; };
 		3F2A4FC423C7A730005DFAD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A4FC323C7A730005DFAD6 /* AppDelegate.swift */; };
 		3F2A4FCB23C7A730005DFAD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A4FC923C7A730005DFAD6 /* Main.storyboard */; };
 		3F2A4FCD23C7A731005DFAD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A4FCC23C7A731005DFAD6 /* Assets.xcassets */; };
 		3F2A4FD023C7A731005DFAD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A4FCE23C7A731005DFAD6 /* LaunchScreen.storyboard */; };
 		3F2A4FD923C7AA89005DFAD6 /* AudioWaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A4FD823C7AA89005DFAD6 /* AudioWaveViewController.swift */; };
 		3F2A4FDB23C7AACB005DFAD6 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A4FDA23C7AACB005DFAD6 /* UIView+Utility.swift */; };
+		3F6DDC3123C7C958001F7EAB /* AudioWaveViewController+Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6DDC3023C7C958001F7EAB /* AudioWaveViewController+Recording.swift */; };
+		3F6DDC3323C8B527001F7EAB /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6DDC3223C8B527001F7EAB /* UIViewController+Utility.swift */; };
 		E341A2BC6611AFADBE3EEB44 /* Pods_Terpsikhore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737996686A6156BD2D61E57A /* Pods_Terpsikhore.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3F1A9C6A23C8EEF2005114C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F2A4FB823C7A730005DFAD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F1A9C6423C8EEF2005114C8;
+			remoteInfo = RecordingService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F1A9C6D23C8EEF2005114C8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F1A9C6E23C8EEF2005114C8 /* RecordingService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3F1A9C5E23C8E970005114C8 /* RecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingService.swift; sourceTree = "<group>"; };
+		3F1A9C6523C8EEF2005114C8 /* RecordingService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecordingService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1A9C6723C8EEF2005114C8 /* RecordingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordingService.h; sourceTree = "<group>"; };
+		3F1A9C6823C8EEF2005114C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F2A4FC023C7A730005DFAD6 /* Terpsikhore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Terpsikhore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2A4FC323C7A730005DFAD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F2A4FCA23C7A730005DFAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,16 +60,27 @@
 		3F2A4FD723C7A73A005DFAD6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3F2A4FD823C7AA89005DFAD6 /* AudioWaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioWaveViewController.swift; sourceTree = "<group>"; };
 		3F2A4FDA23C7AACB005DFAD6 /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
+		3F37CF0E23C7BC4900968D01 /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; };
+		3F6DDC3023C7C958001F7EAB /* AudioWaveViewController+Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioWaveViewController+Recording.swift"; sourceTree = "<group>"; };
+		3F6DDC3223C8B527001F7EAB /* UIViewController+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		737996686A6156BD2D61E57A /* Pods_Terpsikhore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Terpsikhore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B97EECF962F84C384088ABF /* Pods-Terpsikhore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terpsikhore.debug.xcconfig"; path = "Target Support Files/Pods-Terpsikhore/Pods-Terpsikhore.debug.xcconfig"; sourceTree = "<group>"; };
 		C461D93BD1419DB444449631 /* Pods-Terpsikhore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Terpsikhore.release.xcconfig"; path = "Target Support Files/Pods-Terpsikhore/Pods-Terpsikhore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3F1A9C6223C8EEF2005114C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F2A4FBD23C7A730005DFAD6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1A9C6C23C8EEF2005114C8 /* RecordingService.framework in Frameworks */,
 				E341A2BC6611AFADBE3EEB44 /* Pods_Terpsikhore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,11 +96,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3F1A9C5B23C8E913005114C8 /* UIKit+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3F6DDC3223C8B527001F7EAB /* UIViewController+Utility.swift */,
+				3F2A4FDA23C7AACB005DFAD6 /* UIView+Utility.swift */,
+			);
+			path = "UIKit+Extension";
+			sourceTree = "<group>";
+		};
+		3F1A9C5C23C8E91F005114C8 /* VIewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F2A4FD823C7AA89005DFAD6 /* AudioWaveViewController.swift */,
+				3F6DDC3023C7C958001F7EAB /* AudioWaveViewController+Recording.swift */,
+			);
+			path = VIewControllers;
+			sourceTree = "<group>";
+		};
+		3F1A9C5D23C8E965005114C8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3F1A9C6623C8EEF2005114C8 /* RecordingService */ = {
+			isa = PBXGroup;
+			children = (
+				3F1A9C5E23C8E970005114C8 /* RecordingService.swift */,
+				3F1A9C6723C8EEF2005114C8 /* RecordingService.h */,
+				3F1A9C6823C8EEF2005114C8 /* Info.plist */,
+			);
+			path = RecordingService;
+			sourceTree = "<group>";
+		};
 		3F2A4FB723C7A730005DFAD6 = {
 			isa = PBXGroup;
 			children = (
 				3F2A4FD723C7A73A005DFAD6 /* README.md */,
+				3F37CF0E23C7BC4900968D01 /* NOTES.md */,
 				3F2A4FC223C7A730005DFAD6 /* Terpsikhore */,
+				3F1A9C6623C8EEF2005114C8 /* RecordingService */,
 				3F2A4FC123C7A730005DFAD6 /* Products */,
 				E9C673044D520B23C1C28799 /* Pods */,
 				21A4952B386410108E5F3A63 /* Frameworks */,
@@ -66,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				3F2A4FC023C7A730005DFAD6 /* Terpsikhore.app */,
+				3F1A9C6523C8EEF2005114C8 /* RecordingService.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +156,10 @@
 		3F2A4FC223C7A730005DFAD6 /* Terpsikhore */ = {
 			isa = PBXGroup;
 			children = (
+				3F1A9C5D23C8E965005114C8 /* Services */,
+				3F1A9C5C23C8E91F005114C8 /* VIewControllers */,
+				3F1A9C5B23C8E913005114C8 /* UIKit+Extension */,
 				3F2A4FC323C7A730005DFAD6 /* AppDelegate.swift */,
-				3F2A4FD823C7AA89005DFAD6 /* AudioWaveViewController.swift */,
-				3F2A4FDA23C7AACB005DFAD6 /* UIView+Utility.swift */,
 				3F2A4FC923C7A730005DFAD6 /* Main.storyboard */,
 				3F2A4FCC23C7A731005DFAD6 /* Assets.xcassets */,
 				3F2A4FCE23C7A731005DFAD6 /* LaunchScreen.storyboard */,
@@ -95,7 +179,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		3F1A9C6023C8EEF2005114C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1A9C6923C8EEF2005114C8 /* RecordingService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		3F1A9C6423C8EEF2005114C8 /* RecordingService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F1A9C6F23C8EEF2005114C8 /* Build configuration list for PBXNativeTarget "RecordingService" */;
+			buildPhases = (
+				3F1A9C6023C8EEF2005114C8 /* Headers */,
+				3F1A9C6123C8EEF2005114C8 /* Sources */,
+				3F1A9C6223C8EEF2005114C8 /* Frameworks */,
+				3F1A9C6323C8EEF2005114C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecordingService;
+			productName = RecordingService;
+			productReference = 3F1A9C6523C8EEF2005114C8 /* RecordingService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		3F2A4FBF23C7A730005DFAD6 /* Terpsikhore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F2A4FD423C7A731005DFAD6 /* Build configuration list for PBXNativeTarget "Terpsikhore" */;
@@ -106,10 +219,12 @@
 				3F2A4FBE23C7A730005DFAD6 /* Resources */,
 				3F2A4FDC23C7ABC2005DFAD6 /* SwiftLint */,
 				37136224BFCBF3AA55989FA0 /* [CP] Embed Pods Frameworks */,
+				3F1A9C6D23C8EEF2005114C8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3F1A9C6B23C8EEF2005114C8 /* PBXTargetDependency */,
 			);
 			name = Terpsikhore;
 			productName = Terpsikhore;
@@ -126,6 +241,9 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Yu;
 				TargetAttributes = {
+					3F1A9C6423C8EEF2005114C8 = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					3F2A4FBF23C7A730005DFAD6 = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -145,11 +263,19 @@
 			projectRoot = "";
 			targets = (
 				3F2A4FBF23C7A730005DFAD6 /* Terpsikhore */,
+				3F1A9C6423C8EEF2005114C8 /* RecordingService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3F1A9C6323C8EEF2005114C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F2A4FBE23C7A730005DFAD6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,17 +349,35 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3F1A9C6123C8EEF2005114C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F1A9C7223C8EEF7005114C8 /* RecordingService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3F2A4FBC23C7A730005DFAD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3F2A4FD923C7AA89005DFAD6 /* AudioWaveViewController.swift in Sources */,
 				3F2A4FC423C7A730005DFAD6 /* AppDelegate.swift in Sources */,
+				3F6DDC3123C7C958001F7EAB /* AudioWaveViewController+Recording.swift in Sources */,
 				3F2A4FDB23C7AACB005DFAD6 /* UIView+Utility.swift in Sources */,
+				3F6DDC3323C8B527001F7EAB /* UIViewController+Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F1A9C6B23C8EEF2005114C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F1A9C6423C8EEF2005114C8 /* RecordingService */;
+			targetProxy = 3F1A9C6A23C8EEF2005114C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3F2A4FC923C7A730005DFAD6 /* Main.storyboard */ = {
@@ -255,6 +399,60 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3F1A9C7023C8EEF2005114C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RecordingService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yu.RecordingService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3F1A9C7123C8EEF2005114C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RecordingService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = yu.RecordingService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		3F2A4FD223C7A731005DFAD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -373,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7B97EECF962F84C384088ABF /* Pods-Terpsikhore.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Terpsikhore/Info.plist;
@@ -392,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C461D93BD1419DB444449631 /* Pods-Terpsikhore.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Terpsikhore/Info.plist;
@@ -410,6 +610,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3F1A9C6F23C8EEF2005114C8 /* Build configuration list for PBXNativeTarget "RecordingService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F1A9C7023C8EEF2005114C8 /* Debug */,
+				3F1A9C7123C8EEF2005114C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3F2A4FBB23C7A730005DFAD6 /* Build configuration list for PBXProject "Terpsikhore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
