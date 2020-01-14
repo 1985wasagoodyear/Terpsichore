@@ -4,20 +4,20 @@ TODO: - write the actual README stuff
 
 ## Table of Contents
 
-TODO: - write the table of contents
+1. To Use
+10. References
 
-
-## To use:
+## 1. To use:
 
 This project uses the following dependencies:
 
-* [`SCSiriWaveformView`](https://github.com/stefanceriu/SCSiriWaveformView)
+* [SCSiriWaveformView](https://github.com/stefanceriu/SCSiriWaveformView)
 * [SwiftLint](https://github.com/realm/SwiftLint)
 
 And installs these dependencies via CocoaPods. Please be sure to perform  `pod install` before usage.
 
 
-## References:
+## 10. References:
 
 [Microphone input wave like Siri using Swift](https://timrichardson.co/2015/02/microphone-input-wave-like-siri-using-swift/)
 

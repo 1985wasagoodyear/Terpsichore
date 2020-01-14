@@ -16,14 +16,16 @@ final class AudioWaveViewController: UIViewController {
     
     // MARK: - UI Properties
     
-    lazy var waveformView: SCSiriWaveformView = {
-        let view = SCSiriWaveformView(frame: .zero)
-        view.waveColor = .white
-        view.primaryWaveLineWidth = 3.0
-        view.secondaryWaveLineWidth = 1.0
-        view.fillIn(self.view)
-        return view
-    }()
+    @IBOutlet var recordingIndicatorView: UIView!
+    @IBOutlet var recordingLengthLabel: UILabel!
+    @IBOutlet var waveformView: SCSiriWaveformView! {
+        didSet {
+            waveformView.waveColor = .white
+            waveformView.primaryWaveLineWidth = 3.0
+            waveformView.secondaryWaveLineWidth = 1.0
+        }
+    }
+    @IBOutlet var recordButton: UIButton!
     
     lazy var service: RecordingService = {
        return RecordingService(self)
@@ -38,20 +40,26 @@ final class AudioWaveViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        service.startRecording()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        service.stopRecording()
     }
     
     // MARK: - Setup Methods
     
     func setupUI() {
         view.addSubview(waveformView)
+        view.sendSubviewToBack(waveformView)
     }
     
+    @IBAction func recordButtonAction(_ sender: Any) {
+        if service.isRecording {
+            service.stopRecording()
+        } else {
+            service.startRecording()
+        }
+    }
 }
  
 extension AudioWaveViewController: RecordingServiceDelegate {

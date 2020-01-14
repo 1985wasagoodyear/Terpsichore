@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,16 +11,83 @@
         <!--Audio Wave View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AudioWaveViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AudioWaveViewController" customModule="Terpsikhore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOb-WQ-g4s">
+                                <rect key="frame" x="151.5" y="44" width="111.5" height="60"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pS-5s-01A">
+                                        <rect key="frame" x="0.0" y="20" width="20" height="20"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="5pS-5s-01A" secondAttribute="height" multiplier="1:1" id="mY6-c7-6FZ"/>
+                                            <constraint firstAttribute="height" constant="20" id="ulD-Nf-vaz"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfm-iJ-ZO1">
+                                        <rect key="frame" x="40" y="0.0" width="71.5" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="5pS-5s-01A" firstAttribute="leading" secondItem="qOb-WQ-g4s" secondAttribute="leading" id="3bu-tq-UNe"/>
+                                    <constraint firstItem="Wfm-iJ-ZO1" firstAttribute="top" secondItem="qOb-WQ-g4s" secondAttribute="top" id="9i4-gX-0xo"/>
+                                    <constraint firstItem="5pS-5s-01A" firstAttribute="centerY" secondItem="qOb-WQ-g4s" secondAttribute="centerY" id="Ez5-h5-zIE"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wfm-iJ-ZO1" secondAttribute="bottom" id="Ocs-uL-GTZ"/>
+                                    <constraint firstItem="Wfm-iJ-ZO1" firstAttribute="leading" secondItem="5pS-5s-01A" secondAttribute="trailing" constant="20" id="r7F-6R-ydd"/>
+                                    <constraint firstAttribute="height" constant="60" id="xhL-iH-flf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wfm-iJ-ZO1" secondAttribute="trailing" id="zLb-0j-Vph"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZQ-kO-qeo" customClass="SCSiriWaveformView">
+                                <rect key="frame" x="0.0" y="104" width="414" height="276"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZZQ-kO-qeo" secondAttribute="height" multiplier="1.5:1" id="8h4-UT-huq"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-TE-Tuh">
+                                <rect key="frame" x="177" y="782" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dNd-TE-Tuh" secondAttribute="height" multiplier="1:1" id="SDZ-S3-ZCv"/>
+                                    <constraint firstAttribute="height" constant="60" id="hBZ-vV-UjY"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="recordButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dyl-rx-hbx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dNd-TE-Tuh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZZQ-kO-qeo" secondAttribute="bottom" constant="20" id="8PH-EW-6hj"/>
+                            <constraint firstItem="qOb-WQ-g4s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ato-QK-jiz"/>
+                            <constraint firstItem="ZZQ-kO-qeo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LiN-bO-ghk"/>
+                            <constraint firstItem="ZZQ-kO-qeo" firstAttribute="top" secondItem="qOb-WQ-g4s" secondAttribute="bottom" id="YhS-a8-6qn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dNd-TE-Tuh" secondAttribute="bottom" constant="20" id="dYm-iN-eL8"/>
+                            <constraint firstItem="dNd-TE-Tuh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kkg-D0-LWy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="qOb-WQ-g4s" secondAttribute="top" id="krS-lw-yIX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZZQ-kO-qeo" secondAttribute="trailing" id="ob8-Id-9og"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="recordButton" destination="dNd-TE-Tuh" id="xau-hL-pqa"/>
+                        <outlet property="recordingIndicatorView" destination="5pS-5s-01A" id="9It-3s-f8c"/>
+                        <outlet property="recordingLengthLabel" destination="Wfm-iJ-ZO1" id="keF-Hh-jyc"/>
+                        <outlet property="waveformView" destination="ZZQ-kO-qeo" id="UD5-VV-Yqm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
         </scene>
     </scenes>
 </document>

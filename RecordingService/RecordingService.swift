@@ -12,7 +12,7 @@ import AVFoundation
 enum RecorderConstants {
     static let settings: [String: Any] = [
         AVSampleRateKey: 44100.0,
-        AVFormatIDKey: kAudioFormatAppleLossless,
+        AVFormatIDKey: kAudioFormatMPEG4AAC, // mp3, previously kAudioFormatAppleLossless
         AVNumberOfChannelsKey: 2,
         AVEncoderAudioQualityKey: AVAudioQuality.min.rawValue
     ]
@@ -35,6 +35,9 @@ public class RecordingService {
         return CADisplayLink(target: self,
                              selector: #selector(updateMeters))
     }()
+    public var isRecording: Bool {
+        return currRecorder?.isRecording ?? false
+    }
     
     public var allRecordings: [URL] {
         do {
@@ -141,21 +144,14 @@ extension RecordingService {
     
     func newUrlForRecording() -> URL {
         let dateString = dateFormatter.string(from: Date())
-        var url = directory.appendingPathComponent(dateString)
+        var url = directory.appendingPathComponent(dateString + ".m4a")
         var count: Int = 0
         
         // untested
         while manager.fileExists(atPath: url.absoluteString) == true {
             count += 1
-            url = directory.appendingPathComponent(dateString + " (\(count))")
+            url = directory.appendingPathComponent(dateString + " (\(count))" + ".m4a")
         }
-        let strData: Data = "hello world".data(using: .utf8)!
-        do {
-            try strData.write(to: url)
-        } catch {
-            fatalError(error.localizedDescription)
-        }
-        print(url)
         return url
     }
     
