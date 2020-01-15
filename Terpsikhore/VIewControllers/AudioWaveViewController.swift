@@ -12,7 +12,23 @@ import UIKit
 import SCSiriWaveformView
 import RecordingService
 
+extension TimeInterval {
+    var string: String {
+        let seconds = Int(self.truncatingRemainder(dividingBy: 60))
+        let minutes = Int((self / 60).truncatingRemainder(dividingBy: 60))
+        let hours = Int(self / 3600)
+        return String(format: "%02d:%02d:%02d",
+                      min(hours, 99),
+                      minutes,
+                      seconds)
+    }
+}
+
 final class AudioWaveViewController: UIViewController {
+
+    enum UIViewConstants {
+        static let recordButtonHeight: CGFloat = 60.0
+    }
     
     // MARK: - UI Properties
     
@@ -25,7 +41,16 @@ final class AudioWaveViewController: UIViewController {
             waveformView.secondaryWaveLineWidth = 1.0
         }
     }
-    @IBOutlet var recordButton: UIButton!
+    @IBOutlet var recordButton: UIButton! {
+        didSet {
+            let radi = UIViewConstants.recordButtonHeight
+            let layer = recordButton.layer
+            layer.cornerRadius = radi / 2.0
+            recordButton.clipsToBounds = false
+            layer.borderWidth = 5.0
+            layer.borderColor = UIColor.black.cgColor
+        }
+    }
     
     lazy var service: RecordingService = {
        return RecordingService(self)
@@ -35,7 +60,6 @@ final class AudioWaveViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,16 +72,13 @@ final class AudioWaveViewController: UIViewController {
     
     // MARK: - Setup Methods
     
-    func setupUI() {
-        view.addSubview(waveformView)
-        view.sendSubviewToBack(waveformView)
-    }
-    
     @IBAction func recordButtonAction(_ sender: Any) {
         if service.isRecording {
             service.stopRecording()
         } else {
-            service.startRecording()
+            service.startRecording(queue: .main) { (interval) in
+                self.recordingLengthLabel.text = interval.string
+            }
         }
     }
 }

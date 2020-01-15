@@ -23,6 +23,46 @@ public protocol RecordingServiceDelegate: AnyObject {
     func recorderDidUpdate(_ power: CGFloat)
 }
 
+public typealias TimeIntervalHandler = (TimeInterval) -> Void
+
+public class RecordingTimer {
+    let update: TimeIntervalHandler
+    let timer: DispatchSourceTimer
+    let queue: DispatchQueue
+    let updateInterval: TimeInterval
+    let startDate: Date
+    public init(queue: DispatchQueue,
+                _ update: @escaping TimeIntervalHandler,
+                _ updateInterval: TimeInterval = 1.0) {
+        self.queue = queue
+        self.update = update
+        self.updateInterval = updateInterval
+        self.startDate = Date()
+        timer = DispatchSource.makeTimerSource()
+        timer.schedule(wallDeadline: .now() + updateInterval,
+                       repeating: updateInterval)
+        timer.setEventHandler { [weak self] in
+            guard let self = self else { return }
+            let difference = Date().timeIntervalSince(self.startDate)
+            self.queue.async {
+                update(difference)
+            }
+        }
+        timer.resume()
+    }
+    deinit {
+        // https://medium.com/over-engineering/a-background-repeating-timer-in-swift-412cecfd2ef9
+        // ??
+        timer.setEventHandler {}
+        timer.cancel()
+        /*
+         If the timer is suspended, calling cancel without resuming
+         triggers a crash. This is documented here https://forums.developer.apple.com/thread/15902
+         */
+        // timer.resume()
+    }
+}
+
 public class RecordingService {
     
     let manager: FileManager
@@ -38,6 +78,8 @@ public class RecordingService {
     public var isRecording: Bool {
         return currRecorder?.isRecording ?? false
     }
+    
+    var timer: RecordingTimer?
     
     public var allRecordings: [URL] {
         do {
@@ -77,11 +119,14 @@ public class RecordingService {
         }
     }
     
-    public func startRecording() {
+    public func startRecording(queue: DispatchQueue, _ timeTracker: TimeIntervalHandler? = nil) {
         if let recorder = currRecorder, recorder.isRecording {
             fatalError("`startRecording` called while there is a recording in-progress")
         }
-                currRecorder = makeRecorder()
+        if let tracker = timeTracker {
+            timer = RecordingTimer(queue: queue, tracker)
+        }
+        currRecorder = makeRecorder()
         session.requestRecordPermission { granted in
             if granted {
                 self.startRecordingHelper()
@@ -98,6 +143,7 @@ public class RecordingService {
         try? session.setActive(false)
         currRecorder.stop()
         displayLink.remove(from: .current, forMode: .common)
+        timer = nil
     }
     
 }
