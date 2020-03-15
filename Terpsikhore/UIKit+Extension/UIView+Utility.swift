@@ -20,4 +20,13 @@ extension UIView {
         ]
         NSLayoutConstraint.activate(constraints)
     }
+    
+    func roundify() {
+        layer.cornerRadius = frame.height / 2.0
+        layer.masksToBounds = true
+    }
+}
+
+extension UIStoryboard {
+    static let main = UIStoryboard(name: "Main", bundle: nil)
 }

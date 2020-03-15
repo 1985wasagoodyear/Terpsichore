@@ -19,6 +19,8 @@ enum RecorderConstants {
 }
 
 public protocol RecordingServiceDelegate: AnyObject {
+    func recordingDidStart()
+    func recordingDidEnd()
     func cannotRecord()
     func recorderDidUpdate(_ power: CGFloat)
 }
@@ -94,6 +96,8 @@ public class RecordingService {
     /// URL to folder of recordings
     let directory: URL
     
+    /// presently, `RecordingService` promises all `RecordingServiceDelegate` methods will be called on the main thread
+    /// this is subject to change
     public init(_ delegate: RecordingServiceDelegate) {
         self.delegate = delegate
         manager = FileManager.default
@@ -134,7 +138,10 @@ public class RecordingService {
                 // Present message to user indicating that recording
                 // can't be performed until they change their preference
                 // under Settings -> Privacy -> Microphone
-                self.delegate?.cannotRecord()
+                
+                DispatchQueue.main.async {
+                    self.delegate?.cannotRecord()
+                }
             }
         }
     }
@@ -143,76 +150,11 @@ public class RecordingService {
         try? session.setActive(false)
         currRecorder.stop()
         displayLink.remove(from: .current, forMode: .common)
+        print("Recording completed, saved to:\n \(currRecorder.url.path)")
         timer = nil
-    }
-    
-}
-
-// internal helper functions
-extension RecordingService {
-    
-    func startRecordingHelper() {
-        
-        guard let recorder = currRecorder else {
-            fatalError("`prepare:` was never called before `startRecording`")
+        DispatchQueue.main.async {
+            self.delegate?.recordingDidEnd()
         }
-        guard recorder.isRecording == false else {
-            fatalError("`startRecording` was called while already recording")
-        }
-        
-        // prepare AVAudioSession for playing & recording audio
-        do {
-            try session.setCategory(.playAndRecord)
-        } catch {
-            fatalError("Could not set category for AVAudioSession")
-        }
-        
-        // start the recording
-        recorder.record()
-        displayLink.add(to: .current, forMode: .common)
-    }
-    
-    @objc func updateMeters() {
-        guard let recorder = currRecorder else {
-            print("could not update, recorder was deinitialized")
-            return
-        }
-        // refresh meter values
-        recorder.updateMeters()
-        
-        // normalize the meter values
-        let power: CGFloat = CGFloat(recorder.averagePower(forChannel: 0))/20
-        let normalizedValue: CGFloat = pow(10, power)
-        DispatchQueue.main.async { [weak self] in
-            self?.delegate?.recorderDidUpdate(normalizedValue)
-        }
-    }
-    
-    func newUrlForRecording() -> URL {
-        let dateString = dateFormatter.string(from: Date())
-        var url = directory.appendingPathComponent(dateString + ".m4a")
-        var count: Int = 0
-        
-        // untested
-        while manager.fileExists(atPath: url.absoluteString) == true {
-            count += 1
-            url = directory.appendingPathComponent(dateString + " (\(count))" + ".m4a")
-        }
-        return url
-    }
-    
-    func makeRecorder() -> AVAudioRecorder {
-        let recorder: AVAudioRecorder
-        do {
-            recorder = try AVAudioRecorder(url: newUrlForRecording(),
-                                           settings: RecorderConstants.settings)
-            try session.setActive(true)
-        } catch {
-            fatalError("Could not instantiate AVAudioRecorder")
-        }
-        recorder.prepareToRecord()
-        recorder.isMeteringEnabled = true
-        return recorder
     }
     
 }

@@ -17,6 +17,10 @@
 		3F2A4FD023C7A731005DFAD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A4FCE23C7A731005DFAD6 /* LaunchScreen.storyboard */; };
 		3F2A4FD923C7AA89005DFAD6 /* AudioWaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A4FD823C7AA89005DFAD6 /* AudioWaveViewController.swift */; };
 		3F2A4FDB23C7AACB005DFAD6 /* UIView+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A4FDA23C7AACB005DFAD6 /* UIView+Utility.swift */; };
+		3F2F7DD8241ED3DB00442F1E /* RecordingService+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F7DD7241ED3DB00442F1E /* RecordingService+Helpers.swift */; };
+		3F2F7DDA241ED53800442F1E /* SavedRecordingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F7DD9241ED53800442F1E /* SavedRecordingsViewController.swift */; };
+		3F2F7DDC241EEB7100442F1E /* SavedRecordingsViewController+Instantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F7DDB241EEB7100442F1E /* SavedRecordingsViewController+Instantiate.swift */; };
+		3F2F7DDE241EEC5200442F1E /* TimeInterval+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F7DDD241EEC5200442F1E /* TimeInterval+Utility.swift */; };
 		3F6DDC3123C7C958001F7EAB /* AudioWaveViewController+Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6DDC3023C7C958001F7EAB /* AudioWaveViewController+Recording.swift */; };
 		3F6DDC3323C8B527001F7EAB /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6DDC3223C8B527001F7EAB /* UIViewController+Utility.swift */; };
 		E341A2BC6611AFADBE3EEB44 /* Pods_Terpsikhore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737996686A6156BD2D61E57A /* Pods_Terpsikhore.framework */; };
@@ -60,6 +64,10 @@
 		3F2A4FD723C7A73A005DFAD6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3F2A4FD823C7AA89005DFAD6 /* AudioWaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioWaveViewController.swift; sourceTree = "<group>"; };
 		3F2A4FDA23C7AACB005DFAD6 /* UIView+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utility.swift"; sourceTree = "<group>"; };
+		3F2F7DD7241ED3DB00442F1E /* RecordingService+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordingService+Helpers.swift"; sourceTree = "<group>"; };
+		3F2F7DD9241ED53800442F1E /* SavedRecordingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecordingsViewController.swift; sourceTree = "<group>"; };
+		3F2F7DDB241EEB7100442F1E /* SavedRecordingsViewController+Instantiate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedRecordingsViewController+Instantiate.swift"; sourceTree = "<group>"; };
+		3F2F7DDD241EEC5200442F1E /* TimeInterval+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Utility.swift"; sourceTree = "<group>"; };
 		3F37CF0E23C7BC4900968D01 /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; };
 		3F6DDC3023C7C958001F7EAB /* AudioWaveViewController+Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioWaveViewController+Recording.swift"; sourceTree = "<group>"; };
 		3F6DDC3223C8B527001F7EAB /* UIViewController+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 			children = (
 				3F6DDC3223C8B527001F7EAB /* UIViewController+Utility.swift */,
 				3F2A4FDA23C7AACB005DFAD6 /* UIView+Utility.swift */,
+				3F2F7DDD241EEC5200442F1E /* TimeInterval+Utility.swift */,
 			);
 			path = "UIKit+Extension";
 			sourceTree = "<group>";
@@ -110,6 +119,8 @@
 			children = (
 				3F2A4FD823C7AA89005DFAD6 /* AudioWaveViewController.swift */,
 				3F6DDC3023C7C958001F7EAB /* AudioWaveViewController+Recording.swift */,
+				3F2F7DD9241ED53800442F1E /* SavedRecordingsViewController.swift */,
+				3F2F7DDB241EEB7100442F1E /* SavedRecordingsViewController+Instantiate.swift */,
 			);
 			path = VIewControllers;
 			sourceTree = "<group>";
@@ -125,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				3F1A9C5E23C8E970005114C8 /* RecordingService.swift */,
+				3F2F7DD7241ED3DB00442F1E /* RecordingService+Helpers.swift */,
 				3F1A9C6723C8EEF2005114C8 /* RecordingService.h */,
 				3F1A9C6823C8EEF2005114C8 /* Info.plist */,
 			);
@@ -246,6 +258,7 @@
 					};
 					3F2A4FBF23C7A730005DFAD6 = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -354,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F1A9C7223C8EEF7005114C8 /* RecordingService.swift in Sources */,
+				3F2F7DD8241ED3DB00442F1E /* RecordingService+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,10 +375,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2F7DDE241EEC5200442F1E /* TimeInterval+Utility.swift in Sources */,
 				3F2A4FD923C7AA89005DFAD6 /* AudioWaveViewController.swift in Sources */,
 				3F2A4FC423C7A730005DFAD6 /* AppDelegate.swift in Sources */,
 				3F6DDC3123C7C958001F7EAB /* AudioWaveViewController+Recording.swift in Sources */,
 				3F2A4FDB23C7AACB005DFAD6 /* UIView+Utility.swift in Sources */,
+				3F2F7DDA241ED53800442F1E /* SavedRecordingsViewController.swift in Sources */,
+				3F2F7DDC241EEB7100442F1E /* SavedRecordingsViewController+Instantiate.swift in Sources */,
 				3F6DDC3323C8B527001F7EAB /* UIViewController+Utility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +590,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Terpsikhore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -582,6 +600,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yu.Terpsikhore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -593,6 +613,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Terpsikhore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -602,6 +623,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = yu.Terpsikhore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
